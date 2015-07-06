@@ -1,0 +1,36 @@
+app:
+  image: blueimp/nginx:1.8
+  volumes:
+    - ./app:/usr/share/nginx/html
+hub:
+  image: selenium/hub:2.46.0
+chrome:
+  image: selenium/node-chrome:2.46.0
+  links:
+    - hub
+    - app
+firefox:
+  image: selenium/node-firefox:2.46.0
+  links:
+    - hub
+    - app
+chromedebug:
+  image: selenium/node-chrome-debug:2.46.0
+  links:
+    - hub
+    - app
+  ports:
+    - 5900:5900
+firefoxdebug:
+  image: selenium/node-firefox-debug:2.46.0
+  links:
+    - hub
+    - app
+  ports:
+    - 5901:5900
+nightwatch:
+  image: blueimp/nightwatch:0.7
+  links:
+    - hub
+  volumes:
+    - ./test:/home/node

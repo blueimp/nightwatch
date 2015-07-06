@@ -1,1 +1,5 @@
 .git
+/app
+/test
+docker-compose.yml
+README.md
