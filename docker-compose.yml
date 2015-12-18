@@ -29,7 +29,7 @@ firefoxdebug:
   ports:
     - 5901:5900
 nightwatch:
-  image: blueimp/nightwatch:0.7
+  image: blueimp/nightwatch:0.8
   links:
     - hub
   volumes:
