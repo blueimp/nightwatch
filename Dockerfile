@@ -2,7 +2,7 @@
 # Nightwatch.js Dockerfile
 #
 
-FROM blueimp/node:4.2
+FROM blueimp/node:4.3
 
 MAINTAINER Sebastian Tschan <mail@blueimp.net>
 
