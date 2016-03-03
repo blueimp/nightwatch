@@ -18,4 +18,4 @@ RUN npm install -g \
 
 USER node
 
-ENTRYPOINT ["nightwatch"]
+ENTRYPOINT ["tini", "--", "nightwatch"]
