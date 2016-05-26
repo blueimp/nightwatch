@@ -1,0 +1,22 @@
+Hallo Sebastian,
+
+I have been not capable to find a way to oepn an issue. Sorry if this message, bothers you in any way.
+
+First of all, thanks for your job, I'm using your nightwatch image to do some testing. On mac platform everything is working really well, no problems at all. 
+
+When I deploy to a droplet on digital ocean, and run the same environment I'm finding this problem:
+
+Couldn't save screenshot to  /home/node/spec/Check-existence-of-Kundenservice-contact-form-and-Google-Recaptcha_FAILED_May-26-2016-122917-GMT+0000.png
+
+The volume on the system is doing the reference to the folder on the container, but for some reason has no rights to write on that path.
+
+Any clue or path that could help me to modify the ssytem on a way I can write on the folder?
+
+Best,
+
+nightwatch:
+  image: blueimp/nightwatch:0.8
+  links:
+    - hub
+  volumes:
+    - ./test:/home/node
