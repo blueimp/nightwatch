@@ -10,7 +10,7 @@ USER root
 
 # Install Nightwatch.js:
 RUN npm install -g \
-  nightwatch@'<0.9' \
+  nightwatch@'<1.0' \
   # Clean up obsolete files:
   && rm -rf \
     /tmp/* \

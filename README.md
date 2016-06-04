@@ -22,14 +22,14 @@ Start the debug browser nodes along with the selenium hub and app server:
 docker-compose up -d chromedebug firefoxdebug
 ```
 
-Connect to the chrome debug node via VNC (password: secret):
+Connect to the chrome debug node via VNC:
 ```sh
-open vnc://$DOCKER_HOST_IP:5900
+open vnc://user:secret@$DOCKER_HOST_IP:5900
 ```
 
-Connect to the firefox debug node via VNC (password: secret):
+Connect to the firefox debug node via VNC:
 ```sh
-open vnc://$DOCKER_HOST_IP:5901
+open vnc://user:secret@$DOCKER_HOST_IP:5901
 ```
 
 Next run the nightwatch tests as shown above.
