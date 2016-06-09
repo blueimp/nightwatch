@@ -4,6 +4,8 @@
 
 FROM alpine:3.4
 
+MAINTAINER Sebastian Tschan <mail@blueimp.net>
+
 RUN apk --no-cache add \
     # Install NodeJS:
     nodejs-lts'<'4.5 \
