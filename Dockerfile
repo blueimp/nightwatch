@@ -4,6 +4,8 @@
 
 FROM alpine:3.4
 
+MAINTAINER Sebastian Tschan <mail@blueimp.net>
+
 RUN apk --no-cache add \
     # Install NodeJS:
     nodejs-lts'<4.5' \
@@ -23,5 +25,7 @@ RUN adduser -D -u 1000 node
 USER node
 
 WORKDIR /home/node
+
+COPY wait-for.sh /usr/local/bin/wait-for
 
 ENTRYPOINT ["nightwatch"]

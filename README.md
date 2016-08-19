@@ -1,38 +1,36 @@
 # Nightwatch.js Dockerfile
 
 ## Usage
-Start the selenium hub, the selenium browser nodes and the app server:
-```sh
-docker-compose up -d chrome firefox
-```
-
 Run the nightwatch tests:
 ```sh
-docker-compose run --rm nightwatch -e default,firefox
+docker-compose run --rm nightwatch
 ```
 
-Stop and remove the started docker containers:
+Stop and remove the dependency containers:
 ```sh
-docker-compose stop && docker-compose rm -vf
+docker-compose down -v
 ```
 
 ## Debug
-Start the debug browser nodes along with the selenium hub and app server:
+Run the nightwatch tests with VNC support:
 ```sh
-docker-compose up -d chromedebug firefoxdebug
+docker-compose run --rm nightwatchvnc
 ```
 
 Connect to the chrome debug node via VNC:
 ```sh
-open vnc://user:secret@$DOCKER_HOST_IP:5900
+open vnc://user:secret@localhost:5900
 ```
 
 Connect to the firefox debug node via VNC:
 ```sh
-open vnc://user:secret@$DOCKER_HOST_IP:5901
+open vnc://user:secret@localhost:5901
 ```
 
-Next run the nightwatch tests as shown above.
+Stop and remove the dependency containers:
+```sh
+docker-compose down -v
+```
 
 ## License
 Released under the [MIT license](http://opensource.org/licenses/MIT).
