@@ -1,5 +1,7 @@
+.dockerignore
 .git
-/app
-/test
+.gitignore
+app
+test
 docker-compose.yml
 README.md
