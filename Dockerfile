@@ -8,7 +8,7 @@ MAINTAINER Sebastian Tschan <mail@blueimp.net>
 
 RUN apk --no-cache add \
     # Install NodeJS:
-    nodejs-lts'<4.5' \
+    nodejs-lts \
   && npm install -g \
     # Install Nightwatch.js:
     nightwatch@'<1.0' \
