@@ -22,18 +22,14 @@ services:
       - HUB_PORT_4444_TCP_ADDR=hub
   nightwatch:
     image: blueimp/nightwatch:0.9
-    entrypoint:
-      - wait-for
-      - hub:4444
-      - app:80
-      - --
-      - nightwatch
-    command: "--e default,firefox"
+    command: --e default,firefox
     depends_on:
       - hub
       - chrome
       - firefox
       - app
+    environment:
+      - WAIT_FOR_HOSTS=hub:4444 app:80
     volumes:
       - ./test:/home/node
   chromedebug:
@@ -62,19 +58,13 @@ services:
       - 5901:5900
   nightwatchvnc:
     image: blueimp/nightwatch:0.9
-    entrypoint:
-      - wait-for
-      - hub:4444
-      - chromedebug:5900
-      - firefoxdebug:5900
-      - app:80
-      - --
-      - nightwatch
-    command: "--e default,firefox"
+    command: --e default,firefox
     depends_on:
       - hub
       - chromedebug
       - firefoxdebug
       - app
+    environment:
+      - WAIT_FOR_HOSTS=hub:4444 chromedebug:5900 firefoxdebug:5900 app:80
     volumes:
       - ./test:/home/node

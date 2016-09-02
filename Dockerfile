@@ -9,6 +9,8 @@ MAINTAINER Sebastian Tschan <mail@blueimp.net>
 RUN apk --no-cache add \
     # Install NodeJS:
     nodejs-lts \
+    # Install tini, a tiny but valid init for containers:
+    tini \
   && npm install -g \
     # Install Nightwatch.js:
     nightwatch@'<1.0' \
@@ -27,5 +29,9 @@ USER node
 WORKDIR /home/node
 
 COPY wait-for.sh /usr/local/bin/wait-for
+COPY entrypoint.sh /usr/local/bin/entrypoint
 
-ENTRYPOINT ["nightwatch"]
+ENV WAIT_FOR_TIMEOUT=10
+ENV WAIT_FOR_HOSTS=
+
+ENTRYPOINT ["entrypoint"]
