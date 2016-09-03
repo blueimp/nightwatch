@@ -22,7 +22,7 @@ services:
       - HUB_PORT_4444_TCP_ADDR=hub
   nightwatch:
     image: blueimp/nightwatch:0.9
-    command: --e default,firefox
+    command: --env default,firefox
     depends_on:
       - hub
       - chrome
@@ -58,7 +58,7 @@ services:
       - 5901:5900
   nightwatchvnc:
     image: blueimp/nightwatch:0.9
-    command: --e default,firefox
+    command: --env default,firefox
     depends_on:
       - hub
       - chromedebug
