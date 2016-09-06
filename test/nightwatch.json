@@ -3,19 +3,17 @@
   "test_settings" : {
     "default" : {
       "launch_url": "http://app",
-      "selenium_host"  : "hub",
+      "selenium_host"  : "chromedriver",
       "desiredCapabilities": {
-        "browserName": "chrome"
+        "browserName": "chrome",
+        "chromeOptions": {
+          "args": ["--no-sandbox"]
+        }
       },
       "screenshots" : {
         "enabled" : true,
         "on_failure" : true,
         "path" : "tests_output"
-      }
-    },
-    "firefox" : {
-      "desiredCapabilities": {
-        "browserName": "firefox"
       }
     }
   }

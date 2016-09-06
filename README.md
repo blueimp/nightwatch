@@ -6,28 +6,13 @@ Run the nightwatch tests:
 docker-compose run --rm nightwatch
 ```
 
-Stop and remove the dependency containers:
+Connect to the chromedriver via VNC:
 ```sh
-docker-compose down -v
+VNC_HOST="$(echo "${DOCKER_HOST:-localhost}" | sed 's#.*/##;s#:.*##')"
+open vnc://user:secret@"$VNC_HOST":5900
 ```
 
-## Debug
-Run the nightwatch tests with VNC support:
-```sh
-docker-compose run --rm nightwatchvnc
-```
-
-Connect to the chrome debug node via VNC:
-```sh
-open vnc://user:secret@localhost:5900
-```
-
-Connect to the firefox debug node via VNC:
-```sh
-open vnc://user:secret@localhost:5901
-```
-
-Stop and remove the dependency containers:
+Stop and remove the docker-compose container set:
 ```sh
 docker-compose down -v
 ```
