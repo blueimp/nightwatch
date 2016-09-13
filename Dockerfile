@@ -31,7 +31,4 @@ WORKDIR /home/node
 COPY wait-for.sh /usr/local/bin/wait-for
 COPY entrypoint.sh /usr/local/bin/entrypoint
 
-ENV WAIT_FOR_TIMEOUT=10
-ENV WAIT_FOR_HOSTS=
-
 ENTRYPOINT ["entrypoint"]
