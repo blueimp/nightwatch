@@ -1,7 +1,7 @@
 version: '2'
 services:
   app:
-    image: nginx:1.10
+    image: nginx:1.10-alpine
     volumes:
       - ./app:/usr/share/nginx/html
   chromedriver:
