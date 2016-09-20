@@ -51,7 +51,7 @@ wait_for_service() {
     fi
     secs=$((secs+1));
     sleep 1;
-  done;
+  done
   echo 'done' >&2
 }
 
