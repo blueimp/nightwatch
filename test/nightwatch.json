@@ -1,20 +1,9 @@
 {
-  "src_folders" : ["."],
-  "test_settings" : {
-    "default" : {
+  "src_folders": ["."],
+  "test_settings": {
+    "default": {
       "launch_url": "http://app",
-      "selenium_host"  : "chromedriver",
-      "desiredCapabilities": {
-        "browserName": "chrome",
-        "chromeOptions": {
-          "args": ["no-sandbox"]
-        }
-      },
-      "screenshots" : {
-        "enabled" : true,
-        "on_failure" : true,
-        "path" : "tests_output"
-      }
+      "selenium_host": "chromedriver"
     }
   }
 }
