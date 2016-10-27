@@ -34,23 +34,23 @@ connect_to_service() {
 wait_for_service() {
   local host="${1%:*}"
   local port="${1#*:}"
-  local secs=0
   local output
   if ! is_integer "$port"; then
     printf 'Error: "%s" is not a valid host:port combination.\n' "$1" >&2
     return 1
   fi
   printf 'Waiting for %s to become available ... ' "$1" >&2
+  # shellcheck disable=SC2155
+  local timeout=$(($(date +%s)+TIMEOUT))
   while ! output="$(connect_to_service "$host" "$port" 2>&1)"; do
-    if [ $secs -eq $TIMEOUT ]; then
+    if [ "$(date +%s)" -gt "$timeout" ]; then
       echo 'timeout' >&2
       if [ ! -z "$output" ]; then
         echo "$output" >&2
       fi
       return 1
     fi
-    secs=$((secs+1));
-    sleep 1;
+    sleep 1
   done
   echo 'done' >&2
 }
