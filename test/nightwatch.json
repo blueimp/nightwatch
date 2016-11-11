@@ -1,7 +1,13 @@
 {
   "src_folders": ["."],
+  "output_folder": false,
   "test_settings": {
     "default": {
+      "screenshots": {
+        "enabled": true,
+        "on_failure": true,
+        "path": "screenshots"
+      },
       "launch_url": "http://app",
       "selenium_host": "chromedriver"
     }

@@ -1,7 +1,2 @@
-.dockerignore
-.git
-.gitignore
-app
-test
-docker-compose.yml
-README.md
+*
+!*.sh

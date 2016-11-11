@@ -10,6 +10,22 @@ services:
       - VNC_ENABLED=true
     ports:
       - 5900:5900
+  record:
+    image: blueimp/vnc2flv
+    command: chromedriver
+    depends_on:
+      - chromedriver
+    environment:
+      - VNC_PASSWORD=secret
+      - WAIT_FOR_HOSTS=chromedriver:5900
+    volumes:
+      - ./test/videos:/home/vnc/flv
+  transcode:
+    image: blueimp/ffmpeg
+    volumes:
+      - ./test/videos:/home/ffmpeg/workdir
+      - ./flv2mp4.sh:/usr/local/bin/flv2mp4
+    entrypoint: sh -c 'flv2mp4 *.flv'
   nightwatch:
     image: blueimp/nightwatch:0.9
     depends_on:
