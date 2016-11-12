@@ -7,10 +7,12 @@ FROM alpine:3.4
 MAINTAINER Sebastian Tschan <mail@blueimp.net>
 
 RUN apk --no-cache add \
-    # Install NodeJS:
-    nodejs-lts \
     # Install tini, a tiny but valid init for containers:
     tini \
+    # Install NodeJS:
+    nodejs-lts \
+    # Install ffmpeg for video recording:
+    ffmpeg \
   && npm install -g \
     # Install Nightwatch.js:
     nightwatch@'<1.0' \

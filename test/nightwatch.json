@@ -1,12 +1,18 @@
 {
-  "src_folders": ["."],
+  "globals_path": "globals.js",
   "output_folder": false,
+  "src_folders": ["specs"],
   "test_settings": {
     "default": {
       "screenshots": {
         "enabled": true,
         "on_failure": true,
         "path": "screenshots"
+      },
+      "videos": {
+        "enabled": true,
+        "delete_on_success": true,
+        "path": "videos"
       },
       "launch_url": "http://app",
       "selenium_host": "chromedriver"
