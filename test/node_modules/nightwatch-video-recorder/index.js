@@ -7,7 +7,7 @@
  * https://blueimp.net
  *
  * Licensed under the MIT license:
- * https://www.opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  */
 
 // Function to create a directory similar to the shell "mkdir -p" command:
