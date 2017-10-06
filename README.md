@@ -25,6 +25,17 @@ Stop and remove the docker-compose container set:
 docker-compose down -v
 ```
 
+## FAQ
+
+### Permission denied for videos/screenshots folders
+If you get a permission error for the videos/screenshots folders, make sure they
+are writable for the nightwatch process:
+
+```sh
+mkdir -p test/screenshots test/videos
+chmod 777 test/screenshots test/videos
+```
+
 ## License
 Released under the [MIT license](https://opensource.org/licenses/MIT).
 
