@@ -1,4 +1,4 @@
-version: '2'
+version: '2.2'
 services:
   app:
     image: nginx:alpine
@@ -13,6 +13,7 @@ services:
       - 5900:5900
   nightwatch:
     image: blueimp/nightwatch:0.9
+    init: true
     depends_on:
       - chromedriver
       - app
