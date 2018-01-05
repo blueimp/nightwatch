@@ -1,6 +1,6 @@
 version: '2.2'
 services:
-  app:
+  nginx:
     image: nginx:alpine
     volumes:
       - ./app:/usr/share/nginx/html
@@ -16,8 +16,8 @@ services:
     init: true
     depends_on:
       - chromedriver
-      - app
+      - nginx
     environment:
-      - WAIT_FOR_HOSTS=app:80 chromedriver:4444 chromedriver:6060
+      - WAIT_FOR_HOSTS=nginx:80 chromedriver:4444 chromedriver:6060
     volumes:
       - ./test:/home/node
