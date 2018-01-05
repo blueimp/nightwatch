@@ -13,8 +13,7 @@ Video recording is done with
 
 Connect to the chromedriver via VNC:
 ```sh
-VNC_HOST="$(echo "${DOCKER_HOST:-localhost}" | sed 's#.*/##;s#:.*##')"
-open vnc://user:secret@"$VNC_HOST":5900
+open vnc://user:secret@localhost:5900
 ```
 
 The VNC password can be changed via `VNC_PASSWORD` environment variable for the
