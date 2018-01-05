@@ -11,7 +11,7 @@
       },
       "videos": {
         "enabled": true,
-        "delete_on_success": true,
+        "delete_on_success": false,
         "path": "videos"
       },
       "launch_url": "http://app",
