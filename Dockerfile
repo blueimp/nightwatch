@@ -2,13 +2,17 @@
 # Nightwatch.js Dockerfile
 #
 
-FROM alpine:3.7
+FROM alpine:3.8
 
 RUN apk --no-cache add \
-    # Install NodeJS:
+    # Install NodeJS and NPM:
     nodejs \
+    npm \
     # Install ffmpeg for video recording:
     ffmpeg \
+  && npm install -g \
+    # Install the latest NPM version:
+    npm@latest \
   && npm install -g \
     # Install Nightwatch.js:
     nightwatch@'<1.0' \
