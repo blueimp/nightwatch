@@ -21,9 +21,8 @@ RUN apk --no-cache add \
     /tmp/* \
     /root/.npm
 
-# Add node system user/group with uid/gid 1000.
-# This is a workaround for boot2docker issue #581, see
-# https://github.com/boot2docker/boot2docker/issues/581
+# Avoid permission issues with host mounts by assigning a user/group with
+# uid/gid 1000 (usually the ID of the first user account on GNU/Linux):
 RUN adduser -D -u 1000 node
 
 USER node
