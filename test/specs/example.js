@@ -8,7 +8,7 @@ function screenshotPath(browser) {
     .replace(/:/g, '-')
   const fileName = `${browser.currentTest.module}-${dateTime}.png`
   return path.resolve(
-    path.join(browser.globals.test_settings.screenshots.path || '', fileName)
+    path.join(browser.options.screenshots.path || '', fileName)
   )
 }
 

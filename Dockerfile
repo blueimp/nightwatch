@@ -15,7 +15,7 @@ RUN apk --no-cache add \
     npm@latest \
   && npm install -g \
     # Install Nightwatch.js:
-    nightwatch@'<1.0' \
+    nightwatch@'<1.1' \
   # Clean up obsolete files:
   && rm -rf \
     /tmp/* \

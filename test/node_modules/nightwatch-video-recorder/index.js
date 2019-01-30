@@ -29,7 +29,7 @@ function mkdirp (dir, mode) {
 
 module.exports = {
   start: function (browser, done) {
-    const settings = browser.globals.test_settings
+    const settings = browser.options
     const videoSettings = settings.videos
     const currentTest = browser.currentTest
     if (videoSettings && videoSettings.enabled) {

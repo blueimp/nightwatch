@@ -13,7 +13,7 @@ services:
     ports:
       - 5900:5900
   nightwatch:
-    image: blueimp/nightwatch:0.9
+    image: blueimp/nightwatch:1.0
     init: true
     depends_on:
       - chromedriver
