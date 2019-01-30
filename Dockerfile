@@ -2,7 +2,7 @@
 # Nightwatch.js Dockerfile
 #
 
-FROM alpine:3.8
+FROM alpine:3.9
 
 RUN apk --no-cache add \
     # Install NodeJS and NPM:
@@ -22,8 +22,6 @@ RUN apk --no-cache add \
     /root/.npm
 
 # Add node system user/group with uid/gid 1000.
-# This is a workaround for boot2docker issue #581, see
-# https://github.com/boot2docker/boot2docker/issues/581
 RUN adduser -D -u 1000 node
 
 USER node
