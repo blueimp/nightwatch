@@ -6,6 +6,7 @@ services:
       - ./app:/usr/share/nginx/html
   chromedriver:
     image: blueimp/chromedriver
+    init: true
     environment:
       - VNC_ENABLED=true
       - EXPOSE_X11=true
