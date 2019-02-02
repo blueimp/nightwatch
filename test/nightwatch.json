@@ -15,7 +15,8 @@
         "path": "videos"
       },
       "launch_url": "http://nginx",
-      "selenium_host": "chromedriver"
+      "selenium_host": "chromedriver",
+      "default_path_prefix": ""
     }
   }
 }
