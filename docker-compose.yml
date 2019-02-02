@@ -8,7 +8,7 @@ services:
     image: blueimp/chromedriver
     init: true
     environment:
-      - VNC_ENABLED=true
+      - ENABLE_VNC=true
       - EXPOSE_X11=true
     ports:
       - 5900:5900
