@@ -49,7 +49,7 @@ module.exports = {
           '-f',
           'x11grab',
           '-i',
-          settings.selenium_host + (videoSettings.display || ':60'),
+          settings.selenium_host + (videoSettings.display || ':0'),
           '-pix_fmt',
           videoSettings.pixel_format || 'yuv420p', // QuickTime compatibility
           '-loglevel',
