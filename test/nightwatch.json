@@ -4,15 +4,8 @@
   "src_folders": ["specs"],
   "test_settings": {
     "default": {
-      "screenshots": {
-        "enabled": true,
-        "on_failure": true,
-        "path": "screenshots"
-      },
       "videos": {
-        "enabled": true,
-        "delete_on_success": false,
-        "path": "videos"
+        "enabled": true
       },
       "launch_url": "http://nginx",
       "selenium_host": "chromedriver",

@@ -7,7 +7,7 @@ Run the nightwatch tests:
 docker-compose run --rm nightwatch
 ```
 
-A video of the test will be stored in `test/videos`.  
+A video of the test will be stored in `test/reports/videos`.  
 Video recording is done with
 [nightwatch-video-recorder](https://github.com/blueimp/nightwatch-video-recorder).
 
@@ -21,18 +21,18 @@ chromedriver container.
 
 Stop and remove the docker-compose container set:
 ```sh
-docker-compose down -v
+docker-compose down
 ```
 
 ## FAQ
 
 ### Permission denied for videos/screenshots folders
-If you get a permission error for the videos/screenshots folders, make sure they
-are writable for the nightwatch process:
+If you get a permission error for the videos folder, make sure it is writable
+for the nightwatch process:
 
 ```sh
-mkdir -p test/screenshots test/videos
-chmod 777 test/screenshots test/videos
+mkdir -p test/reports
+chmod 777 test/reports
 ```
 
 ## License

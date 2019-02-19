@@ -21,4 +21,4 @@ services:
     environment:
       - WAIT_FOR_HOSTS=nginx:80 chromedriver:4444 chromedriver:6000
     volumes:
-      - ./test:/home/node
+      - ./test:/home/nightwatch
